@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hacker Login Form | Helpme_coder</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Add Font Awesome for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <section>
+    <div class="signin">
+      <div class="content">
+        <h2>Sign In</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" required>
+            <i>Username</i>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" required>
+            <i>Password</i>
+          </div>
+          <div class="links">
+            <a href="#">Forgot Password</a>
+            <a href="#">Signup</a>
+          </div>
+          <div class="inputBox">
+            <input type="submit" value="Login" onclick="validateLogin()">
+          </div>
+        </div>
+        <!-- Social Media Links -->
+        <div class="social-media">
+          <a href="https://www.instagram.com" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com" target="_blank" class="social-icon">
+            <i class="fab fa-tiktok"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function validateLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Example credentials (in a real application, this should be handled securely)
+      const validUsername = '11';
+      const validPassword = '11';
+    
+      if (username === validUsername && password === validPassword) {
+        window.location.href = 'download.html';
+      } else {
+        alert('Invalid username or password');
+      }
+    }
+  </script>
+    <script>
+        function validateLogin() {
+          const username = document.getElementById('username').value;
+          const password = document.getElementById('password').value;
+    
+          // Example credentials (in a real application, this should be handled securely)
+          const validUsername = '13';
+          const validPassword = '13';
+        
+          if (username === validUsername && password === validPassword) {
+            window.location.href = 'download.html';
+          } else {
+            alert('Invalid username or password');
+          }
+        }
+      </script>
+    
+
+
+</body>
+</html>

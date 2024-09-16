@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <div class="signin">
+      <div class="content">
+        <h2>Register</h2>
+        <div class="form">
+          <div class="inputBox">
+            <input type="text" id="username" required>
+            <i>Username</i>
+          </div>
+          <div class="inputBox">
+            <input type="password" id="password" required>
+            <i>Password</i>
+          </div>
+          <div class="inputBox">
+            <input type="submit" value="Register" onclick="register()">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function register() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
+      .then(response => {
+        if (response.redirected) {
+          window.location.href = response.url;
+        } else {
+          return response.text();
+        }
+      })
+      .then(message => {
+        if (message) alert(message);
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
